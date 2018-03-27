@@ -16,10 +16,15 @@ export class CounterComponent implements OnInit {
 
   onSubmit(event) {
     // I'm assuming that spaces alone are used to denote separation of words
-    const wordCount = event.split(' ').length;
-
-    // For some reason, ES6 style string templating didn't work for me here; I'm using string interpolation for now
-    this.message = '\"' + event + '\" has ' + wordCount + (wordCount > 1 ? ' words' : ' word');
+    // I'm also assuming that puncuation on its own counts as a word
+    // I'm also assuming that spaces only counts as empty text
+    if (event.replace(/\s/g, '').length) {
+      const wordCount = event.trim().split(/\s+/).length;
+      // For some reason, ES6 style string templating didn't work for me here; I'm using string interpolation for now
+      this.message = '\"' + event + '\" has ' + wordCount + (wordCount > 1 ? ' words' : ' word');
+    } else {
+      this.message = 'Error: no text was entered';
+    }
   }
 
 }
