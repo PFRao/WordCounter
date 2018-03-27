@@ -2,7 +2,7 @@
 
 This is a simple word counter. You just type any number of words into the text area, click "Submit", and a message should pop up telling you how many words you have inputted. From there, you can modify the words you have already typed or click "Clear" to start over. Have fun!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3. Though it might seem like overkill to use a framework like Angular for such a simple project, I did so because this would make new features easier to add should they be needed.
 
 ## How to run
 
